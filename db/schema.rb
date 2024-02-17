@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_17_054453) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_17_060004) do
+  create_table "authorization_codes", charset: "utf8mb4", force: :cascade do |t|
+    t.string "value", null: false
+    t.integer "user_id", null: false
+    t.string "client_id", null: false
+    t.string "redirect_uri"
+    t.datetime "expierd_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clients", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "secret"
@@ -21,10 +31,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_17_054453) do
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
-    t.string "login_id"
+    t.string "login_id", null: false
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["login_id"], name: "index_users_on_login_id", unique: true
   end
 
 end
