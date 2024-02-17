@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_17_062657) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_17_063222) do
   create_table "access_tokens", charset: "utf8mb4", force: :cascade do |t|
     t.string "value", null: false
     t.integer "user_id", null: false
     t.string "client_id", null: false
     t.datetime "expierd_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "access_tokens_scopes", charset: "utf8mb4", force: :cascade do |t|
+    t.string "access_token", null: false
+    t.string "scope", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "authorization_code_scopes", charset: "utf8mb4", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "scope", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
