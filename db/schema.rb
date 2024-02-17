@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_17_061332) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_17_062657) do
   create_table "access_tokens", charset: "utf8mb4", force: :cascade do |t|
     t.string "value", null: false
     t.integer "user_id", null: false
@@ -35,6 +35,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_17_061332) do
     t.string "secret"
     t.string "uid"
     t.string "redirect_uri"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scopes", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
