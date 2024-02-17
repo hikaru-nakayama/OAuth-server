@@ -1,0 +1,2 @@
+class AccessTokensScope < ApplicationRecord
+end
