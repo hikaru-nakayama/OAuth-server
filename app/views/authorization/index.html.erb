@@ -1,2 +1,26 @@
-<h1>Authorization#index</h1>
-<p>Find me in app/views/authorization/index.html.erb</p>
+<html>
+<head>
+  <title>Authorization Page</title>
+</head>
+<body class="font">
+  <h2>Client Application</h2>
+    <%= @client.name %>
+
+  <h2>Requested Permissions</h2>
+    <% if @scopes != nil %>
+    <ol>
+      <% @scopes.each do |scope| %>
+      <li><%= scope %></li>
+      <% end %>
+    </ol>
+    <% end %>
+
+  <h2>Approve?</h2>
+    <form method="post" action="/decision">
+      <input  type="text"     name="login_id" placeholder="Login ID"><br>
+      <input  type="password" name="password" placeholder="Password"><br>
+      <button type="submit" name="approved" value="true">Approve</button>
+      <button type="submit" name="denied"   value="true">Deny</button>
+    </form>
+  </body>
+</html>
