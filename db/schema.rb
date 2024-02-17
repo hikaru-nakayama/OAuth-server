@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_17_054035) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_17_054453) do
   create_table "clients", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "secret"
     t.string "uid"
     t.string "redirect_uri"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+    t.string "login_id"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
