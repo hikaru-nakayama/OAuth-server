@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_17_063222) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_17_184214) do
   create_table "access_tokens", charset: "utf8mb4", force: :cascade do |t|
     t.string "value", null: false
     t.integer "user_id", null: false
@@ -21,15 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_17_063222) do
   end
 
   create_table "access_tokens_scopes", charset: "utf8mb4", force: :cascade do |t|
-    t.string "access_token", null: false
-    t.string "scope", null: false
+    t.integer "access_token_id", null: false
+    t.integer "scope_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "authorization_code_scopes", charset: "utf8mb4", force: :cascade do |t|
-    t.string "code", null: false
-    t.string "scope", null: false
+    t.integer "authorization_code_id", null: false
+    t.integer "scope_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
