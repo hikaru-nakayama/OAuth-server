@@ -63,8 +63,7 @@ class AuthorizationController < ApplicationController
   end
 
 
-  def token 
-
+  def token
     if params[:grant_type] != "authorization_code"
       raise 'Bad request'
     end
