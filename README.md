@@ -62,6 +62,7 @@ localhost:3000/autholize?client_id=bbbbbbb&redirect_uri=http://myapp.com/callbac
 ````
 
 この時、以下の画面が表示される。
+<img width="503" alt="スクリーンショット 2024-06-22 2 41 13" src="https://github.com/hikaru-nakayama/OAuth-server/assets/90587584/a6820f1c-dfeb-4046-8e88-5646c052e813">
 
 
 users table に登録した認証情報を入力すると、redirect_uri にリダイレクトされ、URI に code が付与される。その code を用いて、以下のように access token を取得できる。
